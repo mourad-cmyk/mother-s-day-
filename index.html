@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى أغلى الناس - عيد أم سعيد</title>
+    <!-- استيراد خطوط عربية جميلة -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #d63384;
+            --soft-pink: #fff0f5;
+            --gold: #d4af37;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 100%);
+            font-family: 'Amiri', serif;
+            color: #333;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        h1 {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .heart {
+            color: #e25555;
+            font-size: 50px;
+            animation: beat 1s infinite alternate;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+            border: 2px solid var(--soft-pink);
+        }
+
+        .poem-box {
+            text-align: center;
+            margin: 40px 0;
+            border-right: 4px solid var(--primary-color);
+            padding-right: 20px;
+            font-style: italic;
+        }
+
+        .poem-line {
+            font-size: 1.5rem;
+            line-height: 2;
+            color: #444;
+            display: block;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-top: 30px;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Animations */
+        @keyframes beat {
+            to { transform: scale(1.1); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-family: 'Amiri', serif;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(214, 51, 132, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(214, 51, 132, 0.5);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .poem-line { font-size: 1.2rem; }
+            .message { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="heart">❤️</div>
+        <h1>كل عام وأنتِ جنتي</h1>
+        <p style="font-size: 1.2rem; color: #666;">بمناسبة عيد الأم</p>
+    </header>
+
+    <div class="container">
+        <!-- قسم الشعر العربي -->
+        <div class="poem-box">
+            <span class="poem-line">أَحِنُّ إِلَى خُبْزِ أُمِّي.. وَقَهْوَةِ أُمِّي</span>
+            <span class="poem-line">وَلَمْسَةِ أُمِّي.. وَتَكْبُرُ فِيَّ الطُّفُولَةُ</span>
+            <span class="poem-line">يَوْماً عَلَى صَدْرِ يَوْمِ.. وأَعْشَقُ عُمْرِي لأَنِّي</span>
+            <span class="poem-line">إِذَا مُتُّ، أَخْجَلُ مِنْ دَمْعِ أُمِّي!</span>
+            <p style="font-size: 0.9rem; color: var(--gold); margin-top: 10px;">— محمود درويش</p>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+        <!-- الرسالة العاطفية -->
+        <div class="message">
+            أمي الحبيبة، <br>
+            في يومكِ هذا، تتبعثر الكلمات وتخجل الحروف أمام عظمتكِ. أنتِ لستِ فقط أماً، بل أنتِ الحياة، والأمان، والوطن الذي لا يغيب. 
+            شكراً لأنكِ كنتِ وما زلتِ النور الذي يضيء دربي، والدعاء الذي يحميني. <br>
+            <strong>أحبكِ جداً يا ست الحبايب.</strong>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <button onclick="triggerConfetti()">احتفلي معي يا أمي! 🎉</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        ابنك/ابنتك المحب/ة دائماً ❤️
+    </div>
+
+    <script>
+        // تشغيل الكنفيتي فور تحميل الصفحة
+        window.onload = function() {
+            triggerConfetti();
+        };
+
+        function triggerConfetti() {
+            var duration = 5 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+            function randomInRange(min, max) {
+              return Math.random() * (max - min) + min;
+            }
+
+            var interval = setInterval(function() {
+              var timeLeft = animationEnd - Date.now();
+
+              if (timeLeft <= 0) {
+                return clearInterval(interval);
+              }
+
+              var particleCount = 50 * (timeLeft / duration);
+              confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+              confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+            }, 250);
+        }
+    </script>
+</body>
+</html>
